@@ -47,9 +47,9 @@ function showNumbers(a, b, c) {
         console.log("a: ".concat(c));
     }
 }
-// showNumbers(1,2,3)
-// showNumbers(4,5)
-showNumbers(1);
+showNumbers(1, 2, 3);
+showNumbers(4, 5);
+// showNumbers(1)
 // 9 - validação de parâmentros opcionais
 function advancedGreeting(firstName, lastName) {
     if (lastName !== undefined) {
@@ -65,7 +65,7 @@ function showBalance(balance) {
 }
 showBalance(100);
 showBalance('400');
-showBalance(true);
+// showBalance(true)
 var arr2 = [1, 'teste', true];
 //  11 - union types avançado
 function showUserRole(role) {
@@ -102,5 +102,12 @@ function showDirection(direction) {
 }
 showDirection('center');
 // 16 - Non-null Assertion Operators
-var p = document.querySelector('#some-p');
+var p = document.getElementById('some');
 console.log(p.innerText);
+/*  17 - Bigint
+
+let n: bigint
+n = 2000n
+console.log(n)
+console.log(typeof n)
+*/

@@ -51,16 +51,16 @@ const pessoaObj: {nome: string, surname: string} = {nome: 'Nelson', surname: 'Ca
 console.log(pessoaObj)
 
 // 8 - props opcionais
-function showNumbers(a: number, b: number,c?: number){
+function showNumbers(a: number, b: number, c?: number){
     console.log(`a: ${a}`)
     console.log(`a: ${b}`)
     if(c){
     console.log(`a: ${c}`)
     }
 }
-// showNumbers(1,2,3)
-// showNumbers(4,5)
-showNumbers(1)
+showNumbers(1,2,3)
+showNumbers(4,5)
+// showNumbers(1)
 
 
 // 9 - validação de parâmentros opcionais
@@ -81,9 +81,9 @@ function showBalance(balance: string | number){
 }
 showBalance(100)
 showBalance('400')
-showBalance(true)
+// showBalance(true)
 
-const arr2: Array<number | string | boolean |> = [1, 'teste', true]
+const arr2: Array<number | string | boolean> = [1, 'teste', true]
 
 //  11 - union types avançado
 
@@ -148,5 +148,13 @@ showDirection('center')
 
 // 16 - Non-null Assertion Operators
 
-const p = document.querySelector('#some-p')
+const p = document.getElementById('some')
 console.log(p!.innerText)
+
+/*  17 - Bigint
+
+let n: bigint
+n = 2000n
+console.log(n)
+console.log(typeof n)
+*/
