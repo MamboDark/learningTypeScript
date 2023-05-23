@@ -10,7 +10,7 @@ console.log(nomes);
 var nums = [100, 200];
 nums.push(300);
 console.log(nums);
-// 3 - any
+// 3 - any / serve para todos os tipos
 var arr1 = [1, 'teste', true, [], { nome: 'Nelson' }];
 console.log(arr1);
 arr1.push([1, 2, 3]);
@@ -114,7 +114,7 @@ n = 2000n
 console.log(n)
 console.log(typeof n)
 */
-// 18 - symbol
+// 18 - symbol / serve para criar um valor unico.
 console.log('18 - Symbol');
 var symbolA = Symbol('a');
 var symbolB = Symbol('a');
