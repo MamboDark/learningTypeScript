@@ -32,12 +32,13 @@ function greeting(name: string): string{
 }
 console.log(greeting('Nelson'))
 
-// 6 - função anonima
+/* 6 - função anonima
 setTimeout(function(){
     const sallary: number = 1000
     // console.log(parseFloat(sallary))
     console.log(sallary)
-}, 500)
+}, 1)
+*/
 
 //  7 - tipos de objetos
 function passCoordinates(coord: {x: number, y: number}){
@@ -146,10 +147,11 @@ function showDirection(direction: 'left' | 'right' | 'center'){
 }
 showDirection('center')
 
-// 16 - Non-null Assertion Operators
+/* 16 - Non-null Assertion Operators
 
 const p = document.getElementById('some')
 console.log(p!.innerText)
+*/
 
 /*  17 - Bigint
 
@@ -158,3 +160,12 @@ n = 2000n
 console.log(n)
 console.log(typeof n)
 */
+
+// 18 - symbol
+console.log('18 - Symbol')
+
+let symbolA = Symbol('a')
+let symbolB = Symbol('a')
+
+console.log(symbolA == symbolB)
+console.log(symbolA === symbolB)

@@ -24,12 +24,13 @@ function greeting(name) {
     return "Ola ".concat(name);
 }
 console.log(greeting('Nelson'));
-// 6 - função anonima
-setTimeout(function () {
-    var sallary = 1000;
+/* 6 - função anonima
+setTimeout(function(){
+    const sallary: number = 1000
     // console.log(parseFloat(sallary))
-    console.log(sallary);
-}, 500);
+    console.log(sallary)
+}, 1)
+*/
 //  7 - tipos de objetos
 function passCoordinates(coord) {
     console.log("X coordinates: ".concat(coord.x));
@@ -101,9 +102,11 @@ function showDirection(direction) {
     console.log("A dire\u00E7\u00E3o \u00E9: ".concat(direction));
 }
 showDirection('center');
-// 16 - Non-null Assertion Operators
-var p = document.getElementById('some');
-console.log(p.innerText);
+/* 16 - Non-null Assertion Operators
+
+const p = document.getElementById('some')
+console.log(p!.innerText)
+*/
 /*  17 - Bigint
 
 let n: bigint
@@ -111,3 +114,9 @@ n = 2000n
 console.log(n)
 console.log(typeof n)
 */
+// 18 - symbol
+console.log('18 - Symbol');
+var symbolA = Symbol('a');
+var symbolB = Symbol('a');
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);
