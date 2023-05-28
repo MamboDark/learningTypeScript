@@ -1,18 +1,24 @@
-// 1 arrays
-let numbers:number[] = [1,2,3]
-
+/* 1 - arrays
+Podemos especificar um array como tipo também;
+Se temos um array de números: number[]
+Se é um array de string: string[]
+Isso acontece pois geralmente os arrays possuem apenas um único tipo de dado entre seus itens;*/
+console.log('|===== ARRAYS =====|')
+let numbers: number[] = [1, 2, 3]
 numbers.push(5)
-console.log(numbers)
-console.log('Imprimindo apenas um indice do array: ' + numbers[2])
-const nomes:string[] = ['Nelson', 'Carvalho']
-console.log(nomes)
+console.log(`Imprimindo um indice do array numérico: ${numbers[2]}`)
+const nomes: string[] = ['Nelson', 'Carvalho']
+nomes.push('Andressa','Costa') // aceita tipos de sua categoria 'strings'.
+console.log(`Imprimindo um indice do array string: ${nomes[2]}`)
+// indicando um array: string[] ou numbers[] utilizando os colchetes.
 
-
-// Nessa aula pode se reparar como o ts se comporta em relação a fidelidade do código sinalizando as listas string[] ou numbers[] utilizando os colchetes.
-
-// 2- sintaxe antiga de arrays
+/* 2 - sintaxe antiga de arrays
+Os tipos de array possuem duas sintaxes;
+obs: a anterior é à mais utilizada;
+Podemos também fazer desta maneira: Array<number>;*/
+console.log('|===== ARRAYS =====|')
 const nums: Array<number> = [100,200]
-nums.push(300)
+nums.push(300, 400)
 console.log(nums)
 
 // 3 - any / serve para todos os tipos
