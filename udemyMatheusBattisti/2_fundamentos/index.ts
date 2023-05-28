@@ -4,10 +4,10 @@ Logo, podemos inserir apenas números na variável;
 E também mudar o valor para outo número;
 O TypeScript possibilita também a inserção de métodos numéricos apenas;*/
 console.log('|===== NUMBER =====|')
-let x: number = 10
-console.log(x)
-x = 16
-console.log(typeof x)
+let c: number = 10
+c = 20
+console.log(c)
+console.log(typeof c)
 const y: number = 17.11111111
 console.log(typeof y)
 console.log(y.toPrecision(3))
@@ -18,7 +18,7 @@ Logo, podemos inserir apenas texto na variável;
 E também mudar o valor para outro texto;
 O TypeScript possibilita também a inserção de métodos de texto apenas;*/
 console.log('|===== STRING =====|')
-const firstName: string = 'Nelson'
+let firstName: string = 'Nelson'
 console.log(firstName.toUpperCase())
 const lastName: string = 'Carvalho'
 console.log(lastName.toUpperCase())
@@ -46,11 +46,11 @@ console.log('|===== INFERENCE E ANNOTATION =====|')
 // annotation
 const ann: string = 'String através de annotation :'
 console.log(ann)
-console.log('Typeof'typeof ann)
+console.log('Typeof',typeof ann)
 // inference
 let inf = 'String através de Inference' 
 console.log(inf)
-console.log('Typeof'typeof inf)
+console.log('Typeof',typeof inf)
 /*
 FIM
 */
