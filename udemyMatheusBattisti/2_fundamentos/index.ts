@@ -51,8 +51,6 @@ console.log('Typeof'typeof ann)
 let inf = 'String através de Inference' 
 console.log(inf)
 console.log('Typeof'typeof inf)
-// inf = 10
-
-let nome: string = 'Nelson'
-console.log(nome)
-
+/*
+FIM
+*/
