@@ -1,12 +1,13 @@
+"use strict";
 // 1. Crie uma variável que recebe um número
-var num = 7;
+const num = 7;
 // 2. Converta este número para string em uma nova variável
-var numeroString = num.toString();
+const numeroString = num.toString();
 // 4. Imprima este número em uma string maior, utilizando o recurso de template strings ou concatenação
-var stringMaior = 'O número é: ' + numeroString;
+const stringMaior = 'O número é: ' + numeroString;
 console.log(stringMaior);
 // 
-var n1 = 7;
-var numString = n1.toString();
-var impr = "O n\u00FAmero \u00E9 ".concat(numString);
+const n1 = 7;
+const numString = n1.toString();
+const impr = `O número é ${numString}`;
 console.log(impr);

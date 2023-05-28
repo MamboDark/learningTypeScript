@@ -1,18 +1,4 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+"use strict";
 // 1 - type guard
 function sum(a, b) {
     if (typeof a === 'string' && typeof b === 'string') {
@@ -32,11 +18,11 @@ sum('5', 6);
 function operations(arr, operation) {
     if (operation) {
         if (operation == 'sum') {
-            var sum_1 = arr.reduce(function (i, total) { return i + total; });
-            console.log(sum_1);
+            const sum = arr.reduce((i, total) => i + total);
+            console.log(sum);
         }
         else if (operation === 'multiply') {
-            var multiply = arr.reduce(function (i, total) { return i * total; });
+            const multiply = arr.reduce((i, total) => i * total);
             console.log(multiply);
         }
     }
@@ -47,54 +33,50 @@ function operations(arr, operation) {
 operations([1, 3, 3], 'multiply');
 operations([1, 2, 3], 'sum');
 // 3 - instanceof
-var User = /** @class */ (function () {
-    function User(name) {
+class User {
+    constructor(name) {
         this.name = name;
     }
-    return User;
-}());
-var SuperUser = /** @class */ (function (_super) {
-    __extends(SuperUser, _super);
-    function SuperUser(name) {
-        return _super.call(this, name) || this;
+}
+class SuperUser extends User {
+    constructor(name) {
+        super(name);
     }
-    return SuperUser;
-}(User));
-var nelson = new User('Nelson');
-var paul = new SuperUser('Paul');
+}
+const nelson = new User('Nelson');
+const paul = new SuperUser('Paul');
 console.log(nelson);
 console.log(paul);
 function userGreeting(user) {
     if (user instanceof SuperUser) {
-        console.log("Ol\u00E1 ".concat(user.name, ", deseja ver os dados do sistema?"));
+        console.log(`Olá ${user.name}, deseja ver os dados do sistema?`);
     }
     else if (user instanceof User) {
-        console.log("Ol\u00E1 ".concat(user.name));
+        console.log(`Olá ${user.name}`);
     }
 }
 userGreeting(nelson);
 userGreeting(paul);
 // 4 - operador in
-var Dog = /** @class */ (function () {
-    function Dog(name, breed) {
+class Dog {
+    constructor(name, breed) {
         this.name = name;
         if (breed) {
             this.breed = breed;
         }
     }
-    return Dog;
-}());
+}
 function showDogDetails(dog) {
     if ('breed' in dog) {
-        console.log("O cachorro \u00E9 a ra\u00E7a ".concat(dog.breed));
+        console.log(`O cachorro é a raça ${dog.breed}`);
     }
     else {
         console.log('O chachorro é um SRD');
     }
 }
 // Parametros
-var turca = new Dog('Turca');
-var bob = new Dog('Bob', 'Pastor Alemão');
+const turca = new Dog('Turca');
+const bob = new Dog('Bob', 'Pastor Alemão');
 // Rodando função
 showDogDetails(turca);
 showDogDetails(bob);
@@ -138,7 +120,7 @@ function showUserReview(review) {
         console.log('Você não avaliou o produto!');
         return;
     }
-    console.log("A nota que voc\u00EA deu foi: ".concat(review, ", obrigado!"));
+    console.log(`A nota que você deu foi: ${review}, obrigado!`);
 }
 showUserReview(false);
 showUserReview(5);

@@ -1,10 +1,11 @@
-var firstName = 'Nelson';
-var firstNameCaps = 'NELSON';
-var anotherName = 1;
-var x = true;
+"use strict";
+const firstName = 'Nelson';
+const firstNameCaps = 'NELSON';
+const anotherName = 1;
+const x = true;
 function greeting(name) {
     console.log('Hello ' + name);
-    console.log("HELLO WORLD ".concat(name, " :D"));
+    console.log(`HELLO WORLD ${name} :D`);
 }
 greeting(firstName);
 greeting(firstNameCaps);

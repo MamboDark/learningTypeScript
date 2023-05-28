@@ -1,0 +1,19 @@
+TS e a aplicação
+
+Talvez já tenha ficado claro, más programar com TS é como um pair programming;
+Temos sempre alguém para nos avisar se algo é feito errado;
+Depois da compilação o TS não tem mais efeito, ele não pode mais nos ajudar;
+Por isso há uma trava de compilação com erros;
+Além de erros, o TS também proporciona avisos;
+
+Gerando arquivo de configuração
+
+O TS pode ser confgurado de muitas maneiras;
+Mas para isso pecisamos do arquivo de configuração;
+Para criar ele utilizamos: tsc --init
+Agora podemos mudar várias opções em relação ao que o TS executa e também feito o compile;
+
+Compilar TS automaticamente
+
+Para gerar a compilação automática podemos utilizar o comando: tsc -w
+

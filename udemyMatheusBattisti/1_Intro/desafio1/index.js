@@ -1,3 +1,4 @@
+"use strict";
 /*
 function somar(a: number, b: number) {
     const res = a + b
@@ -5,7 +6,7 @@ function somar(a: number, b: number) {
 }
 somar(1, 2)
 */
-somando = function (c, d) {
+somando = (c, d) => {
     return c + d;
 };
 console.log(somando(2, 2));
