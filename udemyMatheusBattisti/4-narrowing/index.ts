@@ -1,4 +1,9 @@
-// 1 - type guard
+/* 1 - typeof type guard
+O tpe guard é basicamente uma validação do tipo utilizando o typeof;
+Desta maneira podemos comparar o retorno do operador com um possível tipo;
+Todos os dados vem como string, exemplo: 'string', 'number', 'boolean';
+E a partir disso realizamos as bifurcações;*/
+console.log('|===== typeof type guard =====|')
 function sum(a: number | string, b: number | string){
     if( typeof a === 'string' && typeof b === 'string'){
         console.log(parseFloat(a) + parseFloat(b))
@@ -12,10 +17,14 @@ sum('4', '59')
 sum(12, 42.3)
 sum('5', 6)
 
-// 2 - checando se valor existe
-function operations(arr: number[], operation: string | undefined){
+/* 2 - checando se valor existe
+Em JavaScript podemos colocar uma variável em um if, se houver algum valor recebemos um true;
+Quando não há valor em um false;
+Desta maneira conseguimos realizar o narrowing também, é uma outra estratégia bem utilziada;*/
+console.log('|===== CHECANDO SE VALOR EXISTE =====|')
+const operations = (arr: number[], operation: string | undefined) => {
     if(operation){
-        if(operation == 'sum'){
+        if(operation === 'sum'){
             const sum = arr.reduce((i, total) => i + total)
             console.log(sum)
         } else if(operation === 'multiply'){
@@ -23,13 +32,21 @@ function operations(arr: number[], operation: string | undefined){
             console.log(multiply)
         }
     } else {
-        console.log('por favor, defina uma operação')
+        console.log('Por favor, defina uma operação!')
     }
 }
-operations([1,3,3]'multiply')
-operations([1,2,3]'sum')
+console.log('Undefined: ')// array passado más prpositalmente não foi passado a operação assim chamando o else.
+operations([1,3,3])
+console.log('Multiplicando: ')
+operations([1, ,3], 'multiply')
+console.log('Somando: ')
+operations([1,2,3], 'sum')
 
-// 3 - instanceof
+/* 3 - operador instanceof
+Para além dos tipos primitivos, podemos trabalhar com instanceof;
+Checando se um dado pertence a uma determinada classe;
+E ele vai servir até para as nossas próprias classes;*/
+console.log('|===== OPERADOR INSTANCEOF =====|')
 class User {
     name
     constructor(name: string){
@@ -58,7 +75,27 @@ function userGreeting(user: object){
 userGreeting(nelson)
 userGreeting(paul)
 
-// 4 - operador in
+class Person {
+    name: string;
+    age: number;
+  
+    constructor(name: string, age: number) {
+      this.name = name;
+      this.age = age;
+      console.log("Um novo objeto Person foi criado.");
+    }
+  }
+  
+  // Criando uma nova instância da classe Person
+  const person = new Person("João", 25);
+console.log(person)
+  
+
+/* 4 - operador in
+O operador in é utilizado para checar se existe uma propriedade no objeto;
+Outro recurso interessante para o narrowing;
+Pois proprieades também podem ser opcionais;*/
+console.log('|===== OPERADOR IN =====|')
 class Dog {
     name
     breed

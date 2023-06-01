@@ -1,5 +1,24 @@
-"use strict";
-// 1 - type guard
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/* 1 - typeof type guard
+O tpe guard é basicamente uma validação do tipo utilizando o typeof;
+Desta maneira podemos comparar o retorno do operador com um possível tipo;
+Todos os dados vem como string, exemplo: 'string', 'number', 'boolean';
+E a partir disso realizamos as bifurcações;*/
+console.log('|===== typeof type guard =====|');
 function sum(a, b) {
     if (typeof a === 'string' && typeof b === 'string') {
         console.log(parseFloat(a) + parseFloat(b));
@@ -14,69 +33,100 @@ function sum(a, b) {
 sum('4', '59');
 sum(12, 42.3);
 sum('5', 6);
-// 2 - checando se valor existe
-function operations(arr, operation) {
+/* 2 - checando se valor existe
+Em JavaScript podemos colocar uma variável em um if, se houver algum valor recebemos um true;
+Quando não há valor em um false;
+Desta maneira conseguimos realizar o narrowing também, é uma outra estratégia bem utilziada;*/
+console.log('|===== CHECANDO SE VALOR EXISTE =====|');
+var operations = function (arr, operation) {
     if (operation) {
-        if (operation == 'sum') {
-            const sum = arr.reduce((i, total) => i + total);
-            console.log(sum);
+        if (operation === 'sum') {
+            var sum_1 = arr.reduce(function (i, total) { return i + total; });
+            console.log(sum_1);
         }
         else if (operation === 'multiply') {
-            const multiply = arr.reduce((i, total) => i * total);
+            var multiply = arr.reduce(function (i, total) { return i * total; });
             console.log(multiply);
         }
     }
     else {
-        console.log('por favor, defina uma operação');
+        console.log('Por favor, defina uma operação!');
     }
-}
-operations([1, 3, 3], 'multiply');
+};
+console.log('Undefined: '); // array passado más prpositalmente não foi passado a operação assim chamando o else.
+operations([1, 3, 3]);
+console.log('Multiplicando: ');
+operations([1, , 3], 'multiply');
+console.log('Somando: ');
 operations([1, 2, 3], 'sum');
-// 3 - instanceof
-class User {
-    constructor(name) {
+/* 3 - operador instanceof
+Para além dos tipos primitivos, podemos trabalhar com instanceof;
+Checando se um dado pertence a uma determinada classe;
+E ele vai servir até para as nossas próprias classes;*/
+console.log('|===== OPERADOR INSTANCEOF =====|');
+var User = /** @class */ (function () {
+    function User(name) {
         this.name = name;
     }
-}
-class SuperUser extends User {
-    constructor(name) {
-        super(name);
+    return User;
+}());
+var SuperUser = /** @class */ (function (_super) {
+    __extends(SuperUser, _super);
+    function SuperUser(name) {
+        return _super.call(this, name) || this;
     }
-}
-const nelson = new User('Nelson');
-const paul = new SuperUser('Paul');
+    return SuperUser;
+}(User));
+var nelson = new User('Nelson');
+var paul = new SuperUser('Paul');
 console.log(nelson);
 console.log(paul);
 function userGreeting(user) {
     if (user instanceof SuperUser) {
-        console.log(`Olá ${user.name}, deseja ver os dados do sistema?`);
+        console.log("Ol\u00E1 ".concat(user.name, ", deseja ver os dados do sistema?"));
     }
     else if (user instanceof User) {
-        console.log(`Olá ${user.name}`);
+        console.log("Ol\u00E1 ".concat(user.name));
     }
 }
 userGreeting(nelson);
 userGreeting(paul);
-// 4 - operador in
-class Dog {
-    constructor(name, breed) {
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        console.log("Um novo objeto Person foi criado.");
+    }
+    return Person;
+}());
+// Criando uma nova instância da classe Person
+var person = new Person("João", 25);
+console.log(person);
+/* 4 - operador in
+O operador in é utilizado para checar se existe uma propriedade no objeto;
+Outro recurso interessante para o narrowing;
+Pois proprieades também podem ser opcionais;*/
+console.log('|===== OPERADOR IN =====|');
+var Dog = /** @class */ (function () {
+    function Dog(name, breed) {
         this.name = name;
         if (breed) {
             this.breed = breed;
         }
     }
-}
+    return Dog;
+}());
 function showDogDetails(dog) {
     if ('breed' in dog) {
-        console.log(`O cachorro é a raça ${dog.breed}`);
+        console.log("O cachorro \u00E9 a ra\u00E7a ".concat(dog.breed));
     }
     else {
         console.log('O chachorro é um SRD');
     }
 }
 // Parametros
-const turca = new Dog('Turca');
-const bob = new Dog('Bob', 'Pastor Alemão');
+var turca = new Dog('Turca');
+var bob = new Dog('Bob', 'Pastor Alemão');
 // Rodando função
 showDogDetails(turca);
 showDogDetails(bob);
@@ -120,7 +170,7 @@ function showUserReview(review) {
         console.log('Você não avaliou o produto!');
         return;
     }
-    console.log(`A nota que você deu foi: ${review}, obrigado!`);
+    console.log("A nota que voc\u00EA deu foi: ".concat(review, ", obrigado!"));
 }
 showUserReview(false);
 showUserReview(5);
