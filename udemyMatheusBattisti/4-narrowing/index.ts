@@ -36,9 +36,9 @@ const operations = (arr: number[], operation: string | undefined) => {
     }
 }
 console.log('Undefined: ')// array passado más prpositalmente não foi passado a operação assim chamando o else.
-operations([1,3,3])
+//operations([1,3,3])
 console.log('Multiplicando: ')
-operations([1, ,3], 'multiply')
+operations([1,2,3], 'multiply')
 console.log('Somando: ')
 operations([1,2,3], 'sum')
 
@@ -122,7 +122,7 @@ showDogDetails(turca)
 showDogDetails(bob)
 
 // 5 - Desafio 3
-function processReview(review: boolean | number): string {
+function processReview(review: boolean | number){
     if (typeof review === 'boolean') {
       return "O usuário não deixou uma revisão.";
     } else if (typeof review === 'number') {
@@ -153,7 +153,7 @@ function processReview(review: boolean | number): string {
   console.log(processReview(true)); // O usuário não deixou uma revisão.
   console.log(processReview(false)); // O usuário não deixou uma revisão.
   console.log(processReview(6)); // Avaliação inválida. Por favor, forneça um número entre 1 e 5.
-  console.log(processReview("review")); // Tipo de revisão inválido. Por favor, forneça um booleano ou um número.
+  //console.log(processReview("review")); // Tipo de revisão inválido. Por favor, forneça um booleano ou um número.
 
   // resposta:
 
