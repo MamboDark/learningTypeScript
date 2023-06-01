@@ -221,8 +221,8 @@ showDirection('left')
 Porém se sabemos que este valor será preenchido, podemos evitar o erro;
 Utilizamos o caractere !;*/
 console.log('|===== NON-NULL SSERTION OPERATORS =====|')
-//const p = document.getElementById('some-p');
-// console.log(p!.innerText)
+const p = document.getElementById('some-p');
+console.log(p!.innerText)
 
 /*  17 - Bigint
 Com o tipo bigint podemos declarar números com valores muito altos;
