@@ -238,7 +238,7 @@ console.log(n + 100n)
 /* 18 - Symbol
 De forma resumida, o symbol cria uma referência única para um valor;
 Ou seja, mesmo que ele possua o mesmo valor de outra variável, teremos valores sendo considerados diferentes;*/
-console.log('|===== BIGINT =====|')
+console.log('|===== SYMBOL =====|')
 let symbolA: symbol = Symbol('a')
 let symbolB = Symbol('A')
 
