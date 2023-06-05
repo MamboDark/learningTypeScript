@@ -69,7 +69,7 @@ console.log(biggestNumber(5, 3))
 console.log(biggestNumber('12','5'))
 //console.log(biggestNumber(true, false))
 
-/* 5 - Defiindo tipo de parâmetros
+/* 5 - Defiindo tipo de parâmetros/Especificar tipo de argumento
 Em generic functions temos que utilizar parâmetros de tipos semelhantes, se não recebemos um erro;
 Porém há a posibilidade de determinar o tipo também dos parâmetros aceitos, com uma sintaxe especial;
 Isso faz com que a validação do TS aceite os tipos escolhidos;*/
@@ -79,3 +79,53 @@ function mergeArrays<T>(arr1: T[], arr2: T[]) {
 }
 console.log(mergeArrays([1,2,3], [5, 6]))
 console.log([mergeArrays<Number | String>([1,2,3], ['teste', 'testando'])])
+
+/* 6 - Parâmetros opcionais
+Nem sempre utilizamos todos os parâmeros de uma função;
+Mas se ele for opcional, precisamos decarar isso pra o TS;
+E ainda deixar ele o fim da lista de parâmetros;*/
+console.log('===== PARÂMETROS OPCIONAIS =====')
+const modernGreeting = (name: string, greet?: string) => {
+
+    if(greet){
+    return `Olá ${greet} ${name}, tudo bem?`
+    }
+
+    return `Olá ${name}, tudo bem?`
+}
+console.log(modernGreeting('Nelson'))
+console.log(modernGreeting('Nelson', 'Dr.'))
+
+/* 7 - Parâmetros default
+O parâmetros default são os que já possuem um valor definido;
+Se não passarmos para a função, é utilizado esse valor;
+Para este recurso, a aplicação e TS é igual JS;*/
+console.log('===== PARÂMETROS DEFAULT =====')
+
+const somaDeFault = (n: number, m = 10): number => {
+    return n+ m
+}
+console.log(somaDeFault(10))
+console.log(somaDeFault(10, 10))
+
+/*  8 - O tipo unknown
+O tio unknown é utilizado de forma semelhante ao any, ele aceita qualquer tipo de dado;
+Porém a diferença é que ele não deix ago ser executado se não houver validação de tipo;
+Ou seja, adiciona uma trava de segurança;*/
+console.log('===== TIPO UNKNOWN =====')
+
+const doSomething = (x: unknown) => {
+    if(Array.isArray(x)) {
+        console.log(x[0])
+    } else if (typeof x === 'number') {
+        console.log('X é um número')
+    }
+}
+doSomething([1, 2, 3])
+doSomething(5)
+
+/* 9 - Tipo Never
+O neer é um tipo de retorno semelhante ao void;
+Porém é utilizado quando a função não retorna nada;
+Um exemplo: retorno de erros;*/
+console.log('===== TIPO NEVER =====')
