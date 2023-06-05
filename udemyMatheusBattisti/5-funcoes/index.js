@@ -56,6 +56,7 @@ console.log(newObject);
 As Generic Functions podem ter seu escopo reduzido por constraints;
 Basicamente limitamos os tipos que podem ser utilizados no Generic;
 Isso faz com que nosso escopo seja menos abrangente;*/
+console.log('===== CONSTRAINTS GENERIC FUNCTION =====');
 function biggestNumber(a, b) {
     var biggest;
     if (+a > +b) {
@@ -69,3 +70,13 @@ function biggestNumber(a, b) {
 console.log(biggestNumber(5, 3));
 console.log(biggestNumber('12', '5'));
 //console.log(biggestNumber(true, false))
+/* 5 - Defiindo tipo de parâmetros
+Em generic functions temos que utilizar parâmetros de tipos semelhantes, se não recebemos um erro;
+Porém há a posibilidade de determinar o tipo também dos parâmetros aceitos, com uma sintaxe especial;
+Isso faz com que a validação do TS aceite os tipos escolhidos;*/
+console.log('===== DEFININDO TIPO DE PARÂMETROS =====');
+function mergeArrays(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+console.log(mergeArrays([1, 2, 3], [5, 6]));
+console.log([mergeArrays([1, 2, 3], ['teste', 'testando'])]);
