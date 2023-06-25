@@ -149,3 +149,4 @@ myArray = myArray.map((item) => {
     return `Fruta: ${item}`
 })
 console.log(myArray)
+
