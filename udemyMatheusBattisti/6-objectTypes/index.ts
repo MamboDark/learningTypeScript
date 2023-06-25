@@ -136,3 +136,16 @@ console.log(arnold.caliber)
 O ReadOnlyArray é um tipo para arrays, que deixa os itens como readonly;
 Podemos aplicar um tipo para os itens do array, além desta propriedade especial;
 A modificação de itens pode ser feita através de método, mas não podemos aumentar o array, por exemplo;*/
+let myArray: ReadonlyArray<string> = ['Maça', 'Laranja', 'Banana']
+
+//myArray[3] = 'Mamão'
+console.log(myArray)
+
+myArray.forEach((item) => {
+    console.log('Fruta: ' + item)
+})
+
+myArray = myArray.map((item) => {
+    return `Fruta: ${item}`
+})
+console.log(myArray)
