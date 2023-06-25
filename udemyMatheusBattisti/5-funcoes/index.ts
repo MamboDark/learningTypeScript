@@ -109,7 +109,7 @@ console.log(somaDeFault(10))
 console.log(somaDeFault(10, 10))
 
 /*  8 - O tipo unknown
-O tio unknown é utilizado de forma semelhante ao any, ele aceita qualquer tipo de dado;
+O tipo unknown é utilizado de forma semelhante ao any, ele aceita qualquer tipo de dado;
 Porém a diferença é que ele não deix ago ser executado se não houver validação de tipo;
 Ou seja, adiciona uma trava de segurança;*/
 console.log('===== TIPO UNKNOWN =====')
@@ -125,7 +125,35 @@ doSomething([1, 2, 3])
 doSomething(5)
 
 /* 9 - Tipo Never
-O neer é um tipo de retorno semelhante ao void;
+O never é um tipo de retorno semelhante ao void;
 Porém é utilizado quando a função não retorna nada;
 Um exemplo: retorno de erros;*/
 console.log('===== TIPO NEVER =====')
+const showErrorMessage = (msg: string): never => {
+    throw new Error(msg)
+}
+//showErrorMessage('Erro!')
+
+/* 10 - Rest operator
+Em JavaScript ES6 podemos utilizar o Rest Operator;
+Para aplicá-lo em parâmetros em TS é fáil, basta definir o tpo de dado com a sintaxe de Rest (...);*/
+console.log('===== REST OPERATOR =====')
+const sumAll = (...n: number[]) => {
+    return n.reduce((number, sum) => sum + number)
+
+}
+console.log(sumAll(6, 7, 8, 9, 10))
+console.log(sumAll(10, 300, 2000))
+//console.log(sumAll('Olá'))
+
+/* 11 - Destructuring em parametros
+O destructuring, outro recurso de ES6, também pode ser aplicado com TS;
+Precisamos apenas determinar o tipo de cada dado que será desestruturado;
+Desta maneira o TS valida o Destructuring;*/
+console.log('===== DESTRUCTURING EM PARÂMETROS =====')
+
+const showProductDetails = ({name, price}: {name: string, price: number}):string => {
+    return `O nome do produto é: ${name} e ele custa R$${price}`
+}
+const shirt = {name: 'camisa', price: 49.99}
+console.log(showProductDetails(shirt))
