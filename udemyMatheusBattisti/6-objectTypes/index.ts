@@ -150,3 +150,34 @@ myArray = myArray.map((item) => {
 })
 console.log(myArray)
 
+/* 8 - Tuplas
+Tupla é um tipo de array, porém definimos a quantidade e o tipo de elementos;
+Basicamente criamos um novo type, e nele inserimos um array com os tipos necessários;
+Cada tipo conta também como um elemento;*/
+
+type fiveNumbers = [number, number, number, number, number]
+
+//number[]
+
+const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5]
+//const myNumberArray2: fiveNumbers = [1, 2, 3, 4, 5, 6]
+//const mixedArray: fiveNumbers = [1, true, 'teste', 4, 5]
+
+console.log(myNumberArray)
+type nameAndAge = [ string, number]
+
+const anotherUser: nameAndAge = ['Nelson', 27]
+console.log(anotherUser[0])
+anotherUser[0] = 'Carvalho'
+//anotherUser[1] = 'teste'
+
+/* 9 - Tuplas com readonly
+Podemos criar tuplas com a propriedade de readonly;
+É um tipo de dado super restrito pois:
+Limita quantos itens teremos, qual o tipo de cada um e também não são modificáveis;*/
+
+function showNumbers(numbers: readonly [number, number]) {
+    console.log(numbers[0])
+    console.log(numbers[1])
+}
+showNumbers([1, 2])
