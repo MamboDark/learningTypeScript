@@ -224,6 +224,3 @@ class blogPost implements showTittle {
         console.log(this.tittle)
     }
 }
-
-/**/
-
